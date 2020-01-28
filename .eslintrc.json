@@ -19,6 +19,7 @@
     }],
     "react/prop-types": 0,
     "import/no-unresolved": "off",
+    "no-unused-expressions": "off",
     "no-shadow": "off"
   }
 }

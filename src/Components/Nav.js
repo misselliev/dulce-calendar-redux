@@ -6,7 +6,7 @@ import {
 } from 'semantic-ui-react';
 
 const Nav = () => {
-  const linkStyle = { color: '#C513AF', fontWeight: 'bold', fontSize: '1.2em' };
+  const linkStyle = { color: '#59499e', fontWeight: 'bold', fontSize: '1.2em' };
   return (
     <Container>
       <Menu stackable widths={4}>

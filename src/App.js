@@ -10,7 +10,7 @@ function App() {
       <Nav />
       <Routes />
     </Router>
-    );
+  );
 }
 
 export default App;

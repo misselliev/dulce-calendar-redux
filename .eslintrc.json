@@ -18,6 +18,7 @@
       "extensions": [".js", ".jsx"]
     }],
     "react/prop-types": 0,
+    "import/no-unresolved": "off",
     "no-shadow": "off"
   }
 }

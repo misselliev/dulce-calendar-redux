@@ -1,10 +1,9 @@
 import React from 'react';
 import { Container } from 'semantic-ui-react';
 
-const HomePage = () => {
-  return (
+const HomePage = () => { (
     <Container>
-      "Home test"
+      Home test
     </Container>
   );
 };

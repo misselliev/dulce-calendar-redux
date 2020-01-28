@@ -19,7 +19,6 @@ const LoginPage = () => {
                 id="email"
                 type="text"
                 name="email"
-                // value={email}
                 placeholder="Email"
                 style={{marginBottom: "1em"}}
               />
@@ -32,7 +31,6 @@ const LoginPage = () => {
                 id="password"
                 type="password"
                 name="password"
-                // value={password}
                 placeholder="Password"
                 style={{marginBottom: "1em"}}
               />

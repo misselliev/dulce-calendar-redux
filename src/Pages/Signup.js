@@ -18,8 +18,6 @@ const SignupPage = () => {
                 id="name"
                 type="text"
                 name="name"
-                // value={name}
-                // onChange={handleChange}
                 placeholder="Name"
                 style={{marginBottom: "1em"}}
 
@@ -33,8 +31,6 @@ const SignupPage = () => {
                 id="email"
                 type="text"
                 name="email"
-                // value={email}
-                // onChange={handleChange}
                 placeholder="Email"
                 style={{marginBottom: "1em"}}
 
@@ -47,8 +43,6 @@ const SignupPage = () => {
                 iconPosition="left"
                 type="password"
                 name="password"
-                // value={password}
-                // onChange={handleChange}
                 placeholder="Password"
                 style={{marginBottom: "1em"}}
               />

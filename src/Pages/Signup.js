@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, Form, Grid, Header, Segment, Icon } from 'semantic-ui-react';
+import {
+  Button, Form, Grid, Header, Segment, Icon
+} from 'semantic-ui-react';
 
 const SignupPage = () => {
   (
@@ -11,43 +13,52 @@ const SignupPage = () => {
         </Header>
         <Form size="large">
           <Segment stacked>
-            <label htmlFor="name">
-              <Form.Input
-                fluid
-                icon="user"
-                iconPosition="left"
-                id="name"
-                type="text"
-                name="name"
-                placeholder="Name"
-                style={{ marginBottom: '1em' }}
-
-              />
-            </label>
-            <label htmlFor="email">
-              <Form.Input
-                fluid
-                icon="user"
-                iconPosition="left"
-                id="email"
-                type="text"
-                name="email"
-                placeholder="Email"
-                style={{ marginBottom: '1em' }}
-
-              />
-            </label>
-            <label htmlFor="password">
-              <Form.Input
-                fluid
-                icon="lock"
-                iconPosition="left"
-                type="password"
-                name="password"
-                placeholder="Password"
-                style={{ marginBottom: '1em' }}
-              />
-            </label>
+            <Form.Input
+              id="form-input-control-name"
+              fluid
+              icon="user"
+              iconPosition="left"
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Name"
+              label="Name"
+              style={{ marginBottom: '1em' }}
+            />
+            <Form.Input
+              id="form-input-control-email"
+              fluid
+              icon="user"
+              iconPosition="left"
+              id="email"
+              type="text"
+              name="email"
+              placeholder="Email"
+              label="Email"
+              style={{ marginBottom: '1em' }}
+            />
+            <Form.Input
+              id="form-input-control-password"
+              fluid
+              icon="lock"
+              iconPosition="left"
+              type="password"
+              name="password"
+              placeholder="Password"
+              label="Password"
+              style={{ marginBottom: '1em' }}
+            />
+            <Form.Input
+              id="form-input-control-password-confirmation"
+              fluid
+              icon="lock"
+              iconPosition="left"
+              type="password"
+              name="password_confirmation"
+              placeholder="Password confirmation"
+              label="Password confirmation"
+              style={{ marginBottom: '1em' }}
+            />
             <Button style={{ backgroundColor: '#5cba57', color: 'white' }} fluid size="large" type="submit">
               Signup
             </Button>

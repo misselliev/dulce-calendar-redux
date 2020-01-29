@@ -6,7 +6,7 @@ import rootReducer from './rootReducer';
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const initState = {
-  user: { currentUser: false },
+  user: {},
   talks: {},
   schedule: {},
 };

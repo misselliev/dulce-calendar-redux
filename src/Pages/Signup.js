@@ -3,8 +3,7 @@ import {
   Button, Form, Grid, Header, Segment, Icon,
 } from 'semantic-ui-react';
 
-const SignupPage = () => {
-  (
+const SignupPage = () => (
     <Grid textAlign="center" style={{ height: '100vh', marginTop: '2em' }}>
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" style={{ color: '#59499e' }} textAlign="center">
@@ -64,7 +63,6 @@ const SignupPage = () => {
         </Form>
       </Grid.Column>
     </Grid>
-  );
-};
+);
 
 export default SignupPage;

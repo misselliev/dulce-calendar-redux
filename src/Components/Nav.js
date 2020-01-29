@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import userActions from '../Redux/userActions';
 import {
   Container,
   Menu,
 } from 'semantic-ui-react';
+import userActions from '../Redux/userActions';
 
 const Nav = () => {
   const dispatch = useDispatch();

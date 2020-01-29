@@ -40,7 +40,7 @@ const LoginPage = (props) => {
               type="text"
               name="email"
               value={email}
-              onChange={ handleChange }
+              onChange={handleChange}
               placeholder="Email"
               label="Email"
               style={{ marginBottom: '1em' }}
@@ -53,7 +53,7 @@ const LoginPage = (props) => {
               type="password"
               name="password"
               value={password}
-              onChange={ handleChange }
+              onChange={handleChange}
               placeholder="Password"
               label="Password"
               style={{ marginBottom: '1em' }}

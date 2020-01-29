@@ -17,14 +17,15 @@ const registerUser = userObj => ({
 const loginUser = userObj => (dispatch) => {
   axios.post('http://localhost:3000/api/v1/auth/sign_in', userObj).then((res) => {
     dispatch(setUser(res.data.data));
-    localStorage.setItem('user', res.data.data);
+    localStorage.setItem('user', JSON.stringify(res.headers));
   });
 };
 
 const logoutUser = () => (dispatch) => {
-  const userObj = localStorage.getItem('user');
-  axios.delete('http://localhost:3000/api/v1/auth/sign_out', userObj);
+  const headers = JSON.parse(localStorage.user);
+  axios.delete('http://localhost:3000/api/v1/auth/sign_out', {headers: headers});
   dispatch(clearUser());
+  localStorage.clear();
 };
 
 const newUser = userObj => (dispatch) => {

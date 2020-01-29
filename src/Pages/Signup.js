@@ -25,7 +25,7 @@ const SignupPage = (props) => {
   };
 
   const {
-    name, email, password, password_confirmation
+    name, email, password, password_confirmation,
   } = signupForm;
 
   return (

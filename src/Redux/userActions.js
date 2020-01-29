@@ -23,7 +23,7 @@ const loginUser = userObj => (dispatch) => {
 
 const logoutUser = () => (dispatch) => {
   const headers = JSON.parse(localStorage.user);
-  axios.delete('http://localhost:3000/api/v1/auth/sign_out', {headers: headers});
+  axios.delete('http://localhost:3000/api/v1/auth/sign_out', { headers });
   dispatch(clearUser());
   localStorage.clear();
 };

@@ -18,6 +18,9 @@
       "extensions": [".js", ".jsx"]
     }],
     "react/prop-types": 0,
-    "no-shadow": "off"
+    "import/no-unresolved": "off",
+    "no-unused-expressions": "off",
+    "no-shadow": "off",
+    "camelcase": "off"
   }
 }

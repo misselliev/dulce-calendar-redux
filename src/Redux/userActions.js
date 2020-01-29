@@ -8,6 +8,12 @@ const setUser = userObj => ({
 const clearUser = () => ({
   type: 'CLEAR_USER',
 });
+
+const registerUser = userObj => ({
+  type: 'NEW_USER',
+  payload: userObj,
+});
+
 const loginUser = userObj => (dispatch) => {
   axios.post('http://localhost:3000/api/v1/auth/sign_in', userObj).then((res) => {
     dispatch(setUser(res.data.data));
@@ -21,7 +27,14 @@ const logoutUser = () => (dispatch) => {
   dispatch(clearUser());
 };
 
+const newUser = userObj => (dispatch) => {
+  axios.post('http://localhost:3000/api/v1/auth/', userObj).then((res) => {
+    dispatch(registerUser(res.data.data));
+  })
+};
+
 export default {
   loginUser,
   logoutUser,
+  newUser,
 };

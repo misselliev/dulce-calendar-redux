@@ -18,7 +18,6 @@ const LoginPage = () => {
               fluid
               icon="user"
               iconPosition="left"
-              id="email"
               type="text"
               name="email"
               placeholder="Email"
@@ -30,7 +29,6 @@ const LoginPage = () => {
               fluid
               icon="lock"
               iconPosition="left"
-              id="password"
               type="password"
               name="password"
               placeholder="Password"

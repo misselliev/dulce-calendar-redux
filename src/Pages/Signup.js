@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-  Button, Form, Grid, Header, Segment, Icon
+  Button, Form, Grid, Header, Segment, Icon,
 } from 'semantic-ui-react';
 
 const SignupPage = () => {
   (
     <Grid textAlign="center" style={{ height: '100vh', marginTop: '2em' }}>
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" style={{ color: '#59499e' }} textAlign='center'>
+        <Header as="h2" style={{ color: '#59499e' }} textAlign="center">
           <Icon name="user" />
           Create your account
         </Header>
@@ -18,7 +18,6 @@ const SignupPage = () => {
               fluid
               icon="user"
               iconPosition="left"
-              id="name"
               type="text"
               name="name"
               placeholder="Name"
@@ -30,7 +29,6 @@ const SignupPage = () => {
               fluid
               icon="user"
               iconPosition="left"
-              id="email"
               type="text"
               name="email"
               placeholder="Email"

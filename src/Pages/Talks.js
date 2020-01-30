@@ -31,7 +31,7 @@ const TalkPage = () => {
     <Container>
       <h1>Talks Calendar:</h1>
       <React.Fragment>
-      <Item.Group divided>
+        <Item.Group divided>
         {talks.map(({
           id,
           title,
@@ -42,43 +42,49 @@ const TalkPage = () => {
           speaker_name,
           speaker_title,
         }) => (
-        <Segment raised color="violet" key={id}>
+          <Segment raised color="violet" key={id}>
           <Item style={style.item}>
-              <React.Fragment>
-              <Item.Content>
-            <Item.Header as="h2">{title}</Item.Header>
-            <Item.Description>
+            <React.Fragment>
+                <Item.Content>
+                <Item.Header as="h2">{title}</Item.Header>
+                <Item.Description>
               <p>
-              Description: {description}
+              Description:
+              {description}
               </p>
               <p>
-              Location: {location}
+              Location:
+              {location}
               </p>
               <p>
-              Date: {date}
+              Date:
+              {date}
               </p>
               <p>
-              Time: {time.substring(11, 16)}
+              Time:
+              {time.substring(11, 16)}
               </p>
               <p>
-              Speaker: {speaker_name}
+              Speaker:
+              {speaker_name}
               </p>
               <p>
-              Speaker title: {speaker_title}
+              Speaker title:
+              {speaker_title}
               </p>
             </Item.Description>
-          </Item.Content>
-            </React.Fragment>
+              </Item.Content>
+              </React.Fragment>
               <React.Fragment>
-              <div>
-                <Button style={style.button}>Add to Calendar</Button>
-              </div>
-            </React.Fragment>
-            </Item>
-            </Segment>
+            <div>
+              <Button style={style.button}>Add to Calendar</Button>
+            </div>
+              </React.Fragment>
+          </Item>
+          </Segment>
         ))}
       </Item.Group>
-    </React.Fragment>
+      </React.Fragment>
     </Container>
   );
 };

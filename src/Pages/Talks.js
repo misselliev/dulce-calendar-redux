@@ -4,8 +4,7 @@ import { Container } from 'semantic-ui-react';
 import talksActions from '../Redux/talksActions';
 
 const TalkPage = () => {
-  const talks = useSelector(state => state.talks.talks, shallowEqual) 
-  // || {};
+  const talks = useSelector(state => state.talks.talks, shallowEqual) || [];
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -16,7 +15,7 @@ const TalkPage = () => {
   return (
   <Container>
     <h1>Talks Calendar:</h1>
-    {/* {talks.prototype.map(talk => <div>{talk.title}</div>)} */}
+    {talks.map(talk => <div>{talk.title}</div>)}
   </Container>
   );
 };

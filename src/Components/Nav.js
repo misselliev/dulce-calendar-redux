@@ -16,11 +16,12 @@ const Nav = () => {
   const linkStyle = { color: '#59499e', fontWeight: 'bold', fontSize: '1.2em' };
   return (
     <Container>
-      <Menu stackable widths={5}>
+      <Menu stackable widths={6}>
         <Menu.Item><Link style={linkStyle} to="/">Home</Link></Menu.Item>
         <Menu.Item><Link style={linkStyle} to="/login">Login</Link></Menu.Item>
         <Menu.Item><Link style={linkStyle} to="/signup">Signup</Link></Menu.Item>
         <Menu.Item><Link style={linkStyle} to="/talks">Talks</Link></Menu.Item>
+        <Menu.Item><Link style={linkStyle} to="/calendar">Calendar</Link></Menu.Item>
         <Menu.Item><Link style={linkStyle} to="/" onClick={handleLogout}>Logout</Link></Menu.Item>
       </Menu>
     </Container>

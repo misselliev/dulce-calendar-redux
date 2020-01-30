@@ -50,27 +50,27 @@ const TalkPage = () => {
                     <Item.Description>
                       <p>
                       Description:
-                      {description}
+                        {description}
                       </p>
                       <p>
                       Location:
-                      {location}
+                        {location}
                       </p>
                       <p>
                       Date:
-                      {date}
+                        {date}
                       </p>
                       <p>
                       Time:
-                      {time.substring(11, 16)}
+                        {time.substring(11, 16)}
                       </p>
                       <p>
                       Speaker:
-                      {speaker_name}
+                        {speaker_name}
                       </p>
                       <p>
                       Speaker title:
-                      {speaker_title}
+                        {speaker_title}
                       </p>
                     </Item.Description>
                   </Item.Content>

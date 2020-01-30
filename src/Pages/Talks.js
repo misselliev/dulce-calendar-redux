@@ -32,7 +32,7 @@ const TalkPage = () => {
       <h1>Talks Calendar:</h1>
       <React.Fragment>
         <Item.Group divided>
-        {talks.map(({
+          {talks.map(({
           id,
           title,
           description,
@@ -43,47 +43,47 @@ const TalkPage = () => {
           speaker_title,
         }) => (
           <Segment raised color="violet" key={id}>
-          <Item style={style.item}>
+            <Item style={style.item}>
             <React.Fragment>
-                <Item.Content>
-                <Item.Header as="h2">{title}</Item.Header>
-                <Item.Description>
-              <p>
-              Description:
-              {description}
-              </p>
-              <p>
-              Location:
-              {location}
-              </p>
-              <p>
-              Date:
-              {date}
-              </p>
-              <p>
-              Time:
-              {time.substring(11, 16)}
-              </p>
-              <p>
-              Speaker:
-              {speaker_name}
-              </p>
-              <p>
-              Speaker title:
-              {speaker_title}
-              </p>
-            </Item.Description>
-              </Item.Content>
-              </React.Fragment>
-              <React.Fragment>
-            <div>
-              <Button style={style.button}>Add to Calendar</Button>
-            </div>
-              </React.Fragment>
+              <Item.Content>
+                  <Item.Header as="h2">{title}</Item.Header>
+                  <Item.Description>
+                  <p>
+                Description:
+                {description}
+                  </p>
+                  <p>
+                Location:
+                {location}
+                  </p>
+                  <p>
+                Date:
+                {date}
+                  </p>
+                  <p>
+                Time:
+                {time.substring(11, 16)}
+                  </p>
+                  <p>
+                Speaker:
+                {speaker_name}
+                  </p>
+                  <p>
+                Speaker title:
+                {speaker_title}
+                  </p>
+                </Item.Description>
+                </Item.Content>
+            </React.Fragment>
+            <React.Fragment>
+                <div>
+                  <Button style={style.button}>Add to Calendar</Button>
+                </div>
+            </React.Fragment>
           </Item>
           </Segment>
         ))}
-      </Item.Group>
+        </Item.Group>
       </React.Fragment>
     </Container>
   );

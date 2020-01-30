@@ -10,14 +10,20 @@ const TalkPage = () => {
   useEffect(() => {
     dispatch(talksActions.fetchAllTalks());
   }, [dispatch])
-  console.log(talks);
 
   const style = {
   button: {
-    margin: '1em',
     color: 'white',
     backgroundColor: '#5cba57',
+    margin: '0.1em 0.01em 0.1em 0.5em',
+    width: '6em',
+    padding: '1em',
+    minHeight: '100%',
   },
+  item: {
+    display: 'flex',
+  },
+
 }
 
   return (
@@ -35,19 +41,19 @@ const TalkPage = () => {
         speaker_name,
         speaker_title,
       }) => (
-          <Segment raised color="violet">
-          <Item>
-        <React.Fragment key={id}>
+          <Segment raised color="violet" key={id}>
+          <Item style={style.item}>
+        <React.Fragment>
           <Item.Content>
           <Item.Header as='h2'>{title}</Item.Header>
           <Item.Description>
           <p>
             Description:
-            {description}
+            {' ' + description}
           </p>
           <p>
             Location:
-            {location}
+            {' ' + location}
           </p>
           <p>
             Date:
@@ -55,19 +61,24 @@ const TalkPage = () => {
           </p>
           <p>
             Time:
-            {time}
+            {' ' + time.substring(11, 16)}
           </p>
           <p>
             Speaker name:
-            {speaker_name}
+            {' ' + speaker_name}
           </p>
           <p>
             Speaker title:
-            {speaker_title}
+            {' ' + speaker_title}
           </p>
           </Item.Description>
-          <Button style={style.button}>Add to Calendar</Button>
           </Item.Content>
+        </React.Fragment>
+        <React.Fragment>
+          <div>
+          <Button style={style.button}>Add to Calendar</Button>
+          
+          </div>
         </React.Fragment>
         </Item>
         </Segment>

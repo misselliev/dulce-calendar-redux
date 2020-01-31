@@ -18,6 +18,8 @@ const loginUser = userObj => (dispatch) => {
   axios.post('http://localhost:3000/api/v1/auth/sign_in', userObj).then((res) => {
     dispatch(setUser(res.data.data));
     localStorage.setItem('user', JSON.stringify(res.headers));
+  }).catch(error => {
+    throw(error);
   });
 };
 
@@ -31,6 +33,8 @@ const logoutUser = () => (dispatch) => {
 const newUser = userObj => (dispatch) => {
   axios.post('http://localhost:3000/api/v1/auth/', userObj).then((res) => {
     dispatch(registerUser(res.data.data));
+  }).catch(error => {
+    throw(error);
   });
 };
 

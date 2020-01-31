@@ -4,9 +4,12 @@ import {
   Container, Item, Segment, Button,
 } from 'semantic-ui-react';
 import talksActions from '../Redux/talksActions';
+import calendarActions from '../Redux/calendarActions';
 
 const TalkPage = () => {
   const talks = useSelector(state => state.talks.talks, shallowEqual) || [];
+  const user = useSelector(state => state.user.currentUser) || {};
+  const { userId } = user.id;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,6 +28,10 @@ const TalkPage = () => {
     item: {
       display: 'flex',
     },
+  };
+
+  const addEvent = ({user, event}) => {
+    dispatch(calendarActions.addToCalendar({user, event}));
   };
 
   return (
@@ -77,7 +84,7 @@ const TalkPage = () => {
                 </React.Fragment>
                 <React.Fragment>
                   <div>
-                    <Button style={style.button}>Add to Calendar</Button>
+                    <Button style={style.button} onClick={addEvent({userId, id})}>Add to Calendar</Button>
                   </div>
                 </React.Fragment>
               </Item>

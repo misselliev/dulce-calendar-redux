@@ -5,6 +5,16 @@ const addEvent = event => ({
   payload: event,
 });
 
+const loadCalendar = calendar => ({
+  type: 'LOAD_CALENDAR',
+  payload: calendar,
+});
+
+const deleteItem = event => ({
+  type: 'DELETE_EVENT',
+  payload: event,
+})
+
 const addToCalendar = event => (dispatch) => {
   axios.post('/api/v1/schedules', event).then((res) => {
     dispatch(addEvent(res.data));
@@ -13,6 +23,24 @@ const addToCalendar = event => (dispatch) => {
   });
 };
 
+const fetchCalendar = () => (dispatch) => {
+  axios.get('/api/v1/schedules').then((res) => {
+    dispatch(loadCalendar(res.data));
+  }).catch(error => {
+    throw(error);
+  });
+};
+
+const removeEvent = (event) => (dispatch) => {
+  axios.delete(`/api/v1/schedules/${event.id}`).then((res) => {
+    dispatch(deleteItem(res.data));
+  }).catch(error => {
+    throw(error);
+  });
+};
+
 export default {
   addToCalendar,
+  fetchCalendar,
+  removeEvent,
 };

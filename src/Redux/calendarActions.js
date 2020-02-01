@@ -24,15 +24,15 @@ const addToCalendar = event => (dispatch) => {
 };
 
 const fetchCalendar = () => (dispatch) => {
+  // axios.get(`/api/v1/schedules/${userId}`).then((res) => {
   axios.get('/api/v1/schedules').then((res) => {
     dispatch(loadCalendar(res.data));
   }).catch(error => {
     throw(error);
   });
 };
-
-const removeEvent = (event) => (dispatch) => {
-  axios.delete(`/api/v1/schedules/${event.id}`).then((res) => {
+const removeFromSchedule = (event) => (dispatch) => {
+  axios.delete(`/api/v1/schedules/${event.talk.id}`).then((res) => {
     dispatch(deleteItem(res.data));
   }).catch(error => {
     throw(error);
@@ -42,5 +42,5 @@ const removeEvent = (event) => (dispatch) => {
 export default {
   addToCalendar,
   fetchCalendar,
-  removeEvent,
+  removeFromSchedule,
 };

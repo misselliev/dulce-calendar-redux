@@ -7,17 +7,20 @@ import calendarActions from '../Redux/calendarActions';
 
 const CalendarPage = () => {
   const calendar = useSelector(state => state.calendar.calendar, shallowEqual) || [];
+  const user = useSelector(state => state.user.currentUser) || {};
+  const userId  = user.id;
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(calendarActions.fetchCalendar());
   }, [dispatch]);
 
-  const deleteEvent = (e) => {
-    e.preventDefault();
-    dispatch(calendarActions.removeEvent());
+  const deleteEvent = ({userId, talk}) => {
+    dispatch(calendarActions.removeFromSchedule({userId, talk}));
   };
 
+  const filteredData = calendar.filter(item=> item.user.id === userId);
+  
   const style = {
     button: {
       color: 'white',
@@ -37,7 +40,7 @@ const CalendarPage = () => {
       <h1>Your Calendar:</h1>
       <React.Fragment>
         <Item.Group divided>
-          {calendar.map(({
+          {filteredData.map(({
             id,
             talk,
           }) => (
@@ -76,7 +79,7 @@ const CalendarPage = () => {
                 </React.Fragment>
                 <React.Fragment>
                   <div>
-                    <Button style={style.button} onClick={deleteEvent}>Remove from Calendar</Button>
+                    <Button style={style.button} onClick={()=>deleteEvent({userId, talk})}>Remove from Calendar</Button>
                   </div>
                 </React.Fragment>
               </Item>

@@ -9,7 +9,7 @@ import calendarActions from '../Redux/calendarActions';
 const TalkPage = () => {
   const talks = useSelector(state => state.talks.talks, shallowEqual) || [];
   const user = useSelector(state => state.user.currentUser) || {};
-  const { userId } = user.id;
+  const user_id = user.id;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -30,8 +30,8 @@ const TalkPage = () => {
     },
   };
 
-  const addEvent = ({user, event}) => {
-    dispatch(calendarActions.addToCalendar({user, event}));
+  const addEvent = ({user_id, talk_id}) => {
+    dispatch(calendarActions.addToCalendar({user_id, talk_id}));
   };
 
   return (
@@ -84,7 +84,7 @@ const TalkPage = () => {
                 </React.Fragment>
                 <React.Fragment>
                   <div>
-                    <Button style={style.button} onClick={addEvent({userId, id})}>Add to Calendar</Button>
+                    <Button style={style.button} onClick={()=>addEvent({user_id, talk_id: id})}>Add to Calendar</Button>
                   </div>
                 </React.Fragment>
               </Item>

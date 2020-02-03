@@ -85,7 +85,8 @@ const TalkPage = () => {
                 <React.Fragment>
                   <div>
                     <Button style={style.button} onClick={() => addEvent({ user_id, talk_id: id })}>
-                      Add to Calendar</Button>
+                      Add to Calendar
+                    </Button>
                   </div>
                 </React.Fragment>
               </Item>

@@ -15,9 +15,9 @@ const CalendarPage = () => {
     dispatch(calendarActions.fetchCalendar());
   }, [dispatch]);
 
-  const deleteEvent = ({userId, talk}) => { 
-    dispatch(calendarActions.removeFromSchedule({userId, talk}));
-   };
+  const deleteEvent = ({ userId, talk }) => {
+    dispatch(calendarActions.removeFromSchedule({ userId, talk }));
+  };
 
   const filteredData = calendar.filter(item => item.user.id === userId);
 
@@ -80,7 +80,8 @@ const CalendarPage = () => {
                 <React.Fragment>
                   <div>
                     <Button style={style.button} onClick={() => deleteEvent({ userId, talk })}>
-                      Remove from Calendar</Button>
+                      Remove from Calendar
+                    </Button>
                   </div>
                 </React.Fragment>
               </Item>

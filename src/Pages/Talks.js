@@ -30,8 +30,8 @@ const TalkPage = () => {
     },
   };
 
-  const addEvent = ({user_id, talk_id}) => {
-    dispatch(calendarActions.addToCalendar({user_id, talk_id}));
+  const addEvent = ({ user_id, talk_id }) => {
+    dispatch(calendarActions.addToCalendar({ user_id, talk_id }));
   };
 
   return (
@@ -84,7 +84,8 @@ const TalkPage = () => {
                 </React.Fragment>
                 <React.Fragment>
                   <div>
-                    <Button style={style.button} onClick={()=>addEvent({user_id, talk_id: id})}>Add to Calendar</Button>
+                    <Button style={style.button} onClick={() => addEvent({ user_id, talk_id: id })}>
+                      Add to Calendar</Button>
                   </div>
                 </React.Fragment>
               </Item>

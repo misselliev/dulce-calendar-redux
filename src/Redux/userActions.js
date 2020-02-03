@@ -18,8 +18,8 @@ const loginUser = userObj => (dispatch) => {
   axios.post('http://localhost:3000/api/v1/auth/sign_in', userObj).then((res) => {
     dispatch(setUser(res.data.data));
     localStorage.setItem('user', JSON.stringify(res.headers));
-  }).catch(error => {
-    throw(error);
+  }).catch((error) => {
+     throw(error);
   });
 };
 

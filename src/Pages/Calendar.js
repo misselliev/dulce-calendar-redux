@@ -15,8 +15,8 @@ const CalendarPage = () => {
     dispatch(calendarActions.fetchCalendar(userId));
   }, [dispatch, userId]);
 
-  const deleteEvent = ({ userId, talk }) => {
-    dispatch(calendarActions.removeFromSchedule({ userId, talk }));
+  const deleteEvent = ({ userId, id }) => {
+    dispatch(calendarActions.removeFromSchedule({ userId, id }));
   };
 
   const style = {
@@ -87,7 +87,7 @@ const CalendarPage = () => {
                 </React.Fragment>
                 <React.Fragment>
                   <div>
-                    <Button style={style.button} onClick={() => deleteEvent({ userId, talk })}>
+                    <Button style={style.button} onClick={() => deleteEvent({ userId, id })}>
                       Remove from Calendar
                     </Button>
                   </div>

@@ -3,24 +3,27 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
   Container, Item, Segment, Button,
 } from 'semantic-ui-react';
-import talksActions from '../Redux/talksActions';
 import calendarActions from '../Redux/calendarActions';
 
-const TalkPage = () => {
-  const talks = useSelector(state => state.talks.talks, shallowEqual) || [];
+const CalendarPage = () => {
+  const calendar = useSelector(state => state.calendar.calendar, shallowEqual) || [];
   const user = useSelector(state => state.user.currentUser) || {};
-  const user_id = user.id;
+  const userId = user.id;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(talksActions.fetchAllTalks());
-  }, [dispatch]);
+    dispatch(calendarActions.fetchCalendar(userId));
+  }, [dispatch, userId]);
+
+  const deleteEvent = ({ userId, talk }) => {
+    dispatch(calendarActions.removeFromSchedule({ userId, talk }));
+  };
 
   const style = {
     button: {
       color: 'white',
-      backgroundColor: '#5cba57',
-      margin: '0.1em 0.01em 0.1em 2.5em',
+      backgroundColor: '#35bee0',
+      margin: '0.1em 0.01em 0.1em 0.5em',
       width: '6em',
       padding: '1em',
       minHeight: '100%',
@@ -38,67 +41,54 @@ const TalkPage = () => {
       paddingTop: '1em',
       paddingBottom: '0.5em',
     },
-    spacing: {
-      margin: '1.5em 1.5em 0 1.5em',
-    },
-  };
-
-  const addEvent = ({ user_id, talk_id }) => {
-    dispatch(calendarActions.addToCalendar({ user_id, talk_id }));
   };
 
   return (
     <Container>
-      <h1 style={style.title}>Talks Calendar:</h1>
+      <h1 style={style.title}>Your Calendar:</h1>
       <React.Fragment>
         <Item.Group divided>
-          {talks.map(({
+          {calendar.map(({
             id,
-            title,
-            description,
-            location,
-            date,
-            time,
-            speaker_name,
-            speaker_title,
+            talk,
           }) => (
-            <Segment raised color="violet" style={style.spacing} key={id}>
+            <Segment raised color="violet" style={{ margin: '1.5rem' }} key={id}>
               <Item style={style.item}>
                 <React.Fragment>
                   <Item.Content>
-                    <Item.Header as="h2">{title}</Item.Header>
+                    <Item.Header as="h2">{talk.title}</Item.Header>
                     <Item.Description>
                       <p>
                       Description:
-                        {description}
+                        {talk.description}
                       </p>
                       <p>
                       Location:
-                        {location}
+                        {talk.location}
                       </p>
                       <p>
                       Date:
-                        {date}
+                        {talk.date}
                       </p>
                       <p>
                       Time:
-                        {time.substring(11, 16)}
+                        {talk.time.substring(11, 16)}
                       </p>
                       <p>
                       Speaker:
-                        {speaker_name}
+                        {talk.speaker_name}
                       </p>
                       <p>
                       Speaker title:
-                        {speaker_title}
+                        {talk.speaker_title}
                       </p>
                     </Item.Description>
                   </Item.Content>
                 </React.Fragment>
                 <React.Fragment>
                   <div>
-                    <Button style={style.button} className="talkButton" onClick={() => addEvent({ user_id, talk_id: id })}>
-                      Add to Calendar
+                    <Button style={style.button} onClick={() => deleteEvent({ userId, talk })}>
+                      Remove from Calendar
                     </Button>
                   </div>
                 </React.Fragment>
@@ -111,4 +101,4 @@ const TalkPage = () => {
   );
 };
 
-export default TalkPage;
+export default CalendarPage;

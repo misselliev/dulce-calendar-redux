@@ -8,6 +8,8 @@ const setTalks = talks => ({
 const fetchAllTalks = () => (dispatch) => {
   axios.get('/api/v1/talks').then((res) => {
     dispatch(setTalks(res.data));
+  }).catch((error) => {
+    throw (error);
   });
 };
 

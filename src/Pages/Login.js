@@ -24,7 +24,7 @@ const LoginPage = (props) => {
   const { email, password } = loginForm;
 
   return (
-    <Grid textAlign="center" style={{ height: '100vh', marginTop: '2em' }}>
+    <Grid textAlign="center" className="middle aligned" style={{ height: '100vh' }}>
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" style={{ color: '#59499e' }} textAlign="center">
           <Icon name="home" />

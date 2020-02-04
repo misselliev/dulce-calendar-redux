@@ -25,11 +25,10 @@ const SignupPage = (props) => {
   };
 
   const {
-    name, email, password, password_confirmation,
+    email, password, password_confirmation,
   } = signupForm;
-
   return (
-    <Grid textAlign="center" style={{ height: '100vh', marginTop: '2em' }}>
+    <Grid textAlign="center" className="middle aligned" style={{ height: '100vh' }}>
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" style={{ color: '#59499e' }} textAlign="center">
           <Icon name="user" />
@@ -37,19 +36,6 @@ const SignupPage = (props) => {
         </Header>
         <Form size="large" onSubmit={handleSubmit}>
           <Segment stacked>
-            <Form.Input
-              id="form-input-control-name"
-              fluid
-              icon="user"
-              iconPosition="left"
-              type="text"
-              name="name"
-              value={name}
-              onChange={handleChange}
-              placeholder="Name"
-              label="Name"
-              style={{ marginBottom: '1em' }}
-            />
             <Form.Input
               id="form-input-control-email"
               fluid

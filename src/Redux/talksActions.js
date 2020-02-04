@@ -6,7 +6,8 @@ const setTalks = talks => ({
 });
 
 const fetchAllTalks = () => (dispatch) => {
-  axios.get('/api/v1/talks').then((res) => {
+  const headers = JSON.parse(localStorage.user);
+  axios.get('/api/v1/talks', { headers }).then((res) => {
     dispatch(setTalks(res.data));
   }).catch((error) => {
     throw (error);

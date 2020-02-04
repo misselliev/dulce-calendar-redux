@@ -28,7 +28,7 @@ const SignupPage = (props) => {
     email, password, password_confirmation,
   } = signupForm;
   return (
-    <Grid textAlign="center" className="middle aligned" style={{ height: '100vh' }}>
+    <Grid textAlign="center" className="middle aligned wall" style={{ height: '100vh' }}>
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" style={{ color: '#59499e' }} textAlign="center">
           <Icon name="user" />

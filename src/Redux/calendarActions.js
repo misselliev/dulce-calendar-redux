@@ -23,9 +23,8 @@ const addToCalendar = event => (dispatch) => {
   });
 };
 
-const fetchCalendar = () => (dispatch) => {
-  // axios.get(`/api/v1/schedules/${userId}`).then((res) => {
-  axios.get('/api/v1/schedules').then((res) => {
+const fetchCalendar = userId => (dispatch) => {
+  axios.get(`/api/v1/schedules/${userId}`).then((res) => {
     dispatch(loadCalendar(res.data));
   }).catch((error) => {
     throw (error);

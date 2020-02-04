@@ -33,7 +33,7 @@ const fetchCalendar = userId => (dispatch) => {
 };
 const removeFromSchedule = event => (dispatch) => {
   const headers = JSON.parse(localStorage.user);
-  axios.delete(`/api/v1/schedules/${event.id}`, { headers }).then((res) => {
+  axios.delete(`/api/v1/schedules/${event.id}`, { headers }).then(() => {
     dispatch(deleteItem(event));
   }).catch((error) => {
     throw (error);

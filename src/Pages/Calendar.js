@@ -12,14 +12,12 @@ const CalendarPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(calendarActions.fetchCalendar());
-  }, [dispatch]);
+    dispatch(calendarActions.fetchCalendar(userId));
+  }, [dispatch, userId]);
 
   const deleteEvent = ({ userId, talk }) => {
     dispatch(calendarActions.removeFromSchedule({ userId, talk }));
   };
-
-  const filteredData = calendar.filter(item => item.user.id === userId);
 
   const style = {
     button: {
@@ -32,19 +30,30 @@ const CalendarPage = () => {
     },
     item: {
       display: 'flex',
+      justifyContent: 'space-between',
     },
+    title: {
+      fontSize: '2.5em',
+      color: 'black',
+      textShadow: '2px 2px 4px grey',
+      fontStyle: 'italic',
+      textAlign: 'center',
+      paddingTop:'1em',
+      paddingBottom:'0.5em',
+    }
+
   };
 
   return (
     <Container>
-      <h1>Your Calendar:</h1>
+      <h1 style={style.title}>Your Calendar:</h1>
       <React.Fragment>
         <Item.Group divided>
-          {filteredData.map(({
+          {calendar.map(({
             id,
             talk,
           }) => (
-            <Segment raised color="violet" key={id}>
+            <Segment raised color="violet" style={{margin:'1.5rem'}} key={id}>
               <Item style={style.item}>
                 <React.Fragment>
                   <Item.Content>

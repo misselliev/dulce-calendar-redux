@@ -25,7 +25,7 @@ const Nav = () => {
       <Menu.Item><Link style={linkStyle} to="/" onClick={handleLogout}>Logout</Link></Menu.Item>
     </Menu>
   ) : (
-    <div></div>    
+    <div/>    
   );
   return (
     <Container>

@@ -38,10 +38,9 @@ const CalendarPage = () => {
       textShadow: '2px 2px 4px grey',
       fontStyle: 'italic',
       textAlign: 'center',
-      paddingTop:'1em',
-      paddingBottom:'0.5em',
-    }
-
+      paddingTop: '1em',
+      paddingBottom: '0.5em',
+    },
   };
 
   return (

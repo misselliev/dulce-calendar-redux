@@ -35,12 +35,12 @@ const TalkPage = () => {
       textShadow: '2px 2px 4px grey',
       fontStyle: 'italic',
       textAlign: 'center',
-      paddingTop:'1em',
-      paddingBottom:'0.5em',
+      paddingTop: '1em',
+      paddingBottom: '0.5em',
     },
     spacing: {
       margin: '1.5em 1.5em 0 1.5em',
-    }
+    },
   };
 
   const addEvent = ({ user_id, talk_id }) => {
@@ -97,7 +97,7 @@ const TalkPage = () => {
                 </React.Fragment>
                 <React.Fragment>
                   <div>
-                    <Button style={style.button}className='talkButton' onClick={() => addEvent({ user_id, talk_id: id })}>
+                    <Button style={style.button} className="talkButton" onClick={() => addEvent({ user_id, talk_id: id })}>
                       Add to Calendar
                     </Button>
                   </div>

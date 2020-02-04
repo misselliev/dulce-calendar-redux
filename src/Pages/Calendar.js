@@ -52,7 +52,7 @@ const CalendarPage = () => {
             id,
             talk,
           }) => (
-            <Segment raised color="violet" style={{margin:'1.5rem'}} key={id}>
+            <Segment raised color="violet" style={{ margin: '1.5rem' }} key={id}>
               <Item style={style.item}>
                 <React.Fragment>
                   <Item.Content>

@@ -44,7 +44,7 @@ const CalendarPage = () => {
   };
 
   return (
-    <Container>
+    <Container style={{ height: '100vh' }}>
       <h1 style={style.title}>Your Calendar:</h1>
       <React.Fragment>
         <Item.Group divided>

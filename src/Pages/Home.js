@@ -15,7 +15,7 @@ const styleText = {
 
 const buttonStyle = {
   marginTop: '25vw',
-  marginBottom: '25vw',
+  // marginBottom: '25vw',
   backgroundColor: '#35bee0',
   padding: '1.5em',
 };
@@ -47,9 +47,9 @@ const HomePage = () => {
       <div style={styleText}>
         <h1 style={{ marginTop: '1em' }}>Welcome to Dulce Conferences!</h1>
         <h3>Please login or sign up</h3>
+        <h3>The best app to organize your conference</h3>
         <Button style={buttonStyle}><Link style={{ color: 'white' }} to="/login">Login</Link></Button>
         <Button style={buttonStyle}><Link style={{ color: 'white' }} to="/signup">Signup</Link></Button>
-        <h3>The best app to organize your conference</h3>
       </div>
     </Grid>
 

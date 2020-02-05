@@ -2,7 +2,6 @@
   "name": "dulce-calendar-redux",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://salty-meadow-72553.herokuapp.com",
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

@@ -7,7 +7,7 @@ const setTalks = talks => ({
 
 const fetchAllTalks = () => (dispatch) => {
   const headers = JSON.parse(localStorage.user);
-  axios.get('/api/v1/talks', { headers }).then((res) => {
+  axios.get('https://salty-meadow-72553.herokuapp.com/api/v1/talks', { headers }).then((res) => {
     dispatch(setTalks(res.data));
   }).catch((error) => {
     throw (error);

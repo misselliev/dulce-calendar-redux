@@ -11,6 +11,7 @@ code {
 
 .homePage {
   background: url('./Img/stripes.gif') center center;
+  background: url('https://media2.giphy.com/media/114O4jlDapmMdW/giphy.gif?cid=790b761…&rid=giphy.gif') center center;
   background-size: cover;
   height: 102vh;
 }

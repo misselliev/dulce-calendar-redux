@@ -15,8 +15,7 @@ const styleText = {
 
 const buttonStyle = {
   marginTop: '25vw',
-  // marginBottom: '25vw',
-  backgroundColor: '#35bee0',
+  backgroundColor: '#59499e',
   padding: '1.5em',
 };
 

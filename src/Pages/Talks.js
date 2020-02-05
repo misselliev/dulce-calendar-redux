@@ -48,7 +48,7 @@ const TalkPage = () => {
   };
 
   return (
-    <Container style={{ height: '100vh' }}>
+    <Container>
       <h1 style={style.title}>Talks Calendar:</h1>
       <React.Fragment>
         <Item.Group divided>

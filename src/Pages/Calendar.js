@@ -29,15 +29,15 @@ const CalendarPage = () => {
             id,
             talk,
           }) => (
-            <div>
-              <p class="talk-date">
-              {talk.date}
+            <div key={id}>
+              <p className="talk-date">
+                {talk.date}
               </p>
-              <Segment raised  className="segment-spacing" key={id}>
+              <Segment raised className="segment-spacing">
                 <Item className="calendar-item">
                   <React.Fragment>
                     <Item.Content>
-                      <Item.Header className="segment-title"as="h2">{talk.title}</Item.Header>
+                      <Item.Header className="segment-title" as="h2">{talk.title}</Item.Header>
                       <Item.Description>
                         <p>
                         Description:

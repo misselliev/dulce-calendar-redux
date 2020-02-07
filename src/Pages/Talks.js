@@ -36,12 +36,12 @@ const TalkPage = () => {
             speaker_name,
             speaker_title,
           }) => (
-            <ul className="all-events">
+            <ul className="all-events" key={id}>
               <li className="talk-circle">
                 <p className="talk-date">
-                {date}
+                  {date}
                 </p>
-                <Segment raised className="talk-spacing" key={id}>
+                <Segment raised className="talk-spacing">
                   <Item className="talk-item">
                     <React.Fragment>
                       <Item.Content>

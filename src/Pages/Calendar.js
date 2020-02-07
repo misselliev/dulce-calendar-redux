@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  Container, Item, Segment, Button,
+  Item, Segment, Button,
 } from 'semantic-ui-react';
+import '../Styles/calendarStyle.css';
 import calendarActions from '../Redux/calendarActions';
 
 const CalendarPage = () => {
@@ -19,41 +20,17 @@ const CalendarPage = () => {
     dispatch(calendarActions.removeFromSchedule({ userId, id }));
   };
 
-  const style = {
-    button: {
-      color: 'white',
-      backgroundColor: '#35bee0',
-      margin: '0.1em 0.01em 0.1em 0.5em',
-      width: '6em',
-      padding: '1em',
-      minHeight: '100%',
-    },
-    item: {
-      display: 'flex',
-      justifyContent: 'space-between',
-    },
-    title: {
-      fontSize: '2.5em',
-      color: 'black',
-      textShadow: '2px 2px 4px grey',
-      fontStyle: 'italic',
-      textAlign: 'center',
-      paddingTop: '1em',
-      paddingBottom: '0.5em',
-    },
-  };
-
   return (
-    <Container style={{ height: '100vh' }}>
-      <h1 style={style.title}>Your Calendar:</h1>
+    <main className="ui container calendar">
+      <h1 className="calendar-title">Your Calendar:</h1>
       <React.Fragment>
         <Item.Group divided>
           {calendar.map(({
             id,
             talk,
           }) => (
-            <Segment raised color="violet" style={{ margin: '1.5rem' }} key={id}>
-              <Item style={style.item}>
+            <Segment raised color="violet" className="segment-spacing" key={id}>
+              <Item className="calendar-item">
                 <React.Fragment>
                   <Item.Content>
                     <Item.Header as="h2">{talk.title}</Item.Header>
@@ -87,7 +64,7 @@ const CalendarPage = () => {
                 </React.Fragment>
                 <React.Fragment>
                   <div>
-                    <Button style={style.button} onClick={() => deleteEvent({ userId, id })}>
+                    <Button className="calendar-button" onClick={() => deleteEvent({ userId, id })}>
                       Remove from Calendar
                     </Button>
                   </div>
@@ -97,7 +74,7 @@ const CalendarPage = () => {
           ))}
         </Item.Group>
       </React.Fragment>
-    </Container>
+    </main>
   );
 };
 

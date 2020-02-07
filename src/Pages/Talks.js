@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  Container, Item, Segment, Button,
+  Item, Segment, Button,
 } from 'semantic-ui-react';
+import '../Styles/talksStyle.css';
 import talksActions from '../Redux/talksActions';
 import calendarActions from '../Redux/calendarActions';
 
@@ -16,40 +17,13 @@ const TalkPage = () => {
     dispatch(talksActions.fetchAllTalks());
   }, [dispatch]);
 
-  const style = {
-    button: {
-      color: 'white',
-      backgroundColor: '#5cba57',
-      margin: '0.1em 0.01em 0.1em 2.5em',
-      width: '6em',
-      padding: '1em',
-      minHeight: '100%',
-    },
-    item: {
-      display: 'flex',
-      justifyContent: 'space-between',
-    },
-    title: {
-      fontSize: '2.5em',
-      color: 'black',
-      textShadow: '2px 2px 4px grey',
-      fontStyle: 'italic',
-      textAlign: 'center',
-      paddingTop: '1em',
-      paddingBottom: '0.5em',
-    },
-    spacing: {
-      margin: '1.5em 1.5em 0 1.5em',
-    },
-  };
-
   const addEvent = ({ user_id, talk_id }) => {
     dispatch(calendarActions.addToCalendar({ user_id, talk_id }));
   };
 
   return (
-    <Container>
-      <h1 style={style.title}>Talks Calendar:</h1>
+    <main className="ui container">
+      <h1 className="talk-title">Talks Calendar:</h1>
       <React.Fragment>
         <Item.Group divided>
           {talks.map(({
@@ -62,8 +36,8 @@ const TalkPage = () => {
             speaker_name,
             speaker_title,
           }) => (
-            <Segment raised color="violet" style={style.spacing} key={id}>
-              <Item style={style.item}>
+            <Segment raised color="violet" className="talk-spacing" key={id}>
+              <Item className="talk-item">
                 <React.Fragment>
                   <Item.Content>
                     <Item.Header as="h2">{title}</Item.Header>
@@ -97,7 +71,7 @@ const TalkPage = () => {
                 </React.Fragment>
                 <React.Fragment>
                   <div>
-                    <Button style={style.button} className="talkButton" onClick={() => addEvent({ user_id, talk_id: id })}>
+                    <Button className="talk-button" onClick={() => addEvent({ user_id, talk_id: id })}>
                       Add to Calendar
                     </Button>
                   </div>
@@ -107,7 +81,7 @@ const TalkPage = () => {
           ))}
         </Item.Group>
       </React.Fragment>
-    </Container>
+    </main>
   );
 };
 

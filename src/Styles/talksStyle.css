@@ -1,3 +1,12 @@
+.segment-title {
+  height: 50px;
+  color: #59499e;
+  text-shadow: 2px 2px 4px grey;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
 .talk-button {
   color: white !important;
   background-color: #5cba57 !important;
@@ -13,15 +22,57 @@
 }
 
 .talk-spacing {
-  margin: 1.5em 1.5em 0 1.5em;
+  margin: 1.5em 0 1.5em 4em !important;
 }
 
 .talk-title {
+  background-color: #59499e;
   font-size: 2.5em;
-  color: black;
+  color: white;
   text-shadow: 2px 2px 4px grey;
   font-style: italic;
   text-align: center;
-  padding-top: 1em;
+  padding-top: 0.5em;
   padding-bottom: 0.5em;
+  border-radius: 5px;
+}
+
+p {
+  color: #59499e
+}
+
+.talk-date {
+  color: #35bee0;
+  font-weight: bolder;
+  text-shadow: 2px 1px 0 white;
+  font-size: 1.5em;
+  margin-left: 3em;
+}
+
+.talk-circle:before {
+  content: " ";
+  background: #fff;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #25bee0;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+  margin-left: 0em;
+}
+
+ul.all-events {
+  list-style-type: none;
+}
+
+.all-events:before {
+  content: " ";
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  margin-left: 0.8em;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
 }

@@ -36,48 +36,51 @@ const TalkPage = () => {
             speaker_name,
             speaker_title,
           }) => (
-            <Segment raised color="violet" className="talk-spacing" key={id}>
-              <Item className="talk-item">
-                <React.Fragment>
-                  <Item.Content>
-                    <Item.Header as="h2">{title}</Item.Header>
-                    <Item.Description>
-                      <p>
-                      Description:
-                        {description}
-                      </p>
-                      <p>
-                      Location:
-                        {location}
-                      </p>
-                      <p>
-                      Date:
-                        {date}
-                      </p>
-                      <p>
-                      Time:
-                        {time.substring(11, 16)}
-                      </p>
-                      <p>
-                      Speaker:
-                        {speaker_name}
-                      </p>
-                      <p>
-                      Speaker title:
-                        {speaker_title}
-                      </p>
-                    </Item.Description>
-                  </Item.Content>
-                </React.Fragment>
-                <React.Fragment>
-                  <div>
-                    <Button className="talk-button" onClick={() => addEvent({ user_id, talk_id: id })}>
-                      Add to Calendar
-                    </Button>
-                  </div>
-                </React.Fragment>
-              </Item>
-            </Segment>
+            <ul className="all-events">
+              <li className="talk-circle">
+                <p className="talk-date">
+                {date}
+                </p>
+                <Segment raised className="talk-spacing" key={id}>
+                  <Item className="talk-item">
+                    <React.Fragment>
+                      <Item.Content>
+                        <Item.Header as="h2" className="segment-title">{title}</Item.Header>
+                        <Item.Description>
+                          <p>
+                          Description:
+                            {description}
+                          </p>
+                          <p>
+                          Location:
+                            {location}
+                          </p>
+                          <p>
+                          Time:
+                            {time.substring(11, 16)}
+                          </p>
+                          <p>
+                          Speaker:
+                            {speaker_name}
+                          </p>
+                          <p>
+                          Speaker title:
+                            {speaker_title}
+                          </p>
+                        </Item.Description>
+                      </Item.Content>
+                    </React.Fragment>
+                    <React.Fragment>
+                      <div>
+                        <Button className="talk-button" onClick={() => addEvent({ user_id, talk_id: id })}>
+                          Add to Calendar
+                        </Button>
+                      </div>
+                    </React.Fragment>
+                  </Item>
+                </Segment>
+              </li>
+            </ul>
           ))}
         </Item.Group>
       </React.Fragment>

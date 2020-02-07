@@ -29,48 +29,49 @@ const CalendarPage = () => {
             id,
             talk,
           }) => (
-            <Segment raised color="violet" className="segment-spacing" key={id}>
-              <Item className="calendar-item">
-                <React.Fragment>
-                  <Item.Content>
-                    <Item.Header as="h2">{talk.title}</Item.Header>
-                    <Item.Description>
-                      <p>
-                      Description:
-                        {talk.description}
-                      </p>
-                      <p>
-                      Location:
-                        {talk.location}
-                      </p>
-                      <p>
-                      Date:
-                        {talk.date}
-                      </p>
-                      <p>
-                      Time:
-                        {talk.time.substring(11, 16)}
-                      </p>
-                      <p>
-                      Speaker:
-                        {talk.speaker_name}
-                      </p>
-                      <p>
-                      Speaker title:
-                        {talk.speaker_title}
-                      </p>
-                    </Item.Description>
-                  </Item.Content>
-                </React.Fragment>
-                <React.Fragment>
-                  <div>
-                    <Button className="calendar-button" onClick={() => deleteEvent({ userId, id })}>
-                      Remove from Calendar
-                    </Button>
-                  </div>
-                </React.Fragment>
-              </Item>
-            </Segment>
+            <div>
+              <p class="talk-date">
+              {talk.date}
+              </p>
+              <Segment raised  className="segment-spacing" key={id}>
+                <Item className="calendar-item">
+                  <React.Fragment>
+                    <Item.Content>
+                      <Item.Header className="segment-title"as="h2">{talk.title}</Item.Header>
+                      <Item.Description>
+                        <p>
+                        Description:
+                          {talk.description}
+                        </p>
+                        <p>
+                        Location:
+                          {talk.location}
+                        </p>
+                        <p>
+                        Time:
+                          {talk.time.substring(11, 16)}
+                        </p>
+                        <p>
+                        Speaker:
+                          {talk.speaker_name}
+                        </p>
+                        <p>
+                        Speaker title:
+                          {talk.speaker_title}
+                        </p>
+                      </Item.Description>
+                    </Item.Content>
+                  </React.Fragment>
+                  <React.Fragment>
+                    <div>
+                      <Button className="calendar-button" onClick={() => deleteEvent({ userId, id })}>
+                        Remove from Calendar
+                      </Button>
+                    </div>
+                  </React.Fragment>
+                </Item>
+              </Segment>
+            </div>
           ))}
         </Item.Group>
       </React.Fragment>

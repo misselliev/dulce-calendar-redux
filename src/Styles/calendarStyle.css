@@ -11,12 +11,12 @@ p {
   color: #59499e
 }
 
-.talk-date {
+.calendar-date {
   color: #35bee0;
   font-weight: bolder;
   text-shadow: 2px 1px 0 white;
   font-size: 1.5em;
-  margin-left: 3em;
+  margin-left: 1em;
 }
 
 .segment-title {

@@ -5,6 +5,7 @@
   font-weight: bolder;
   font-size: 1.5rem;
   text-align: left;
+  margin-bottom: 0em;
 }
 
 .talk-button {
@@ -75,4 +76,10 @@ ul.all-events {
   width: 2px;
   height: 100%;
   z-index: 400;
+}
+
+@media (max-width: 520px) {
+  .segment-title {
+    margin-bottom: 1.5em;
+  }
 }

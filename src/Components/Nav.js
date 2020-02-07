@@ -14,7 +14,7 @@ const Nav = () => {
 
   const display = user.currentUser ? (
 
-    <Menu stackable widths={4}>
+    <Menu widths={4}>
       <Menu.Item><Link className="nav-link" to="/">Home</Link></Menu.Item>
       <Menu.Item><Link className="nav-link" to="/talks">Talks</Link></Menu.Item>
       <Menu.Item><Link className="nav-link" to="/calendar">Calendar</Link></Menu.Item>

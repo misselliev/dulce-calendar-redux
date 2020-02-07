@@ -30,7 +30,7 @@ const CalendarPage = () => {
             talk,
           }) => (
             <div key={id}>
-              <p className="talk-date">
+              <p className="calendar-date">
                 {talk.date}
               </p>
               <Segment raised className="segment-spacing">

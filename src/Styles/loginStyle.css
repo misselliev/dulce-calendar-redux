@@ -1,0 +1,20 @@
+.login {
+  height: 100vh;
+}
+
+.login-column {
+  max-width: 450px;
+}
+
+.login-header {
+  color: #59499e !important;
+}
+
+.login-input {
+  margin-bottom: 1em;
+}
+
+.login-button {
+  background-color: #5cba57 !important;
+  color: white !important;
+}

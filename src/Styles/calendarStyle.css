@@ -1,0 +1,31 @@
+.calendar-button {
+  color: white !important;
+  background-color: #35bee0 !important;
+  margin: 0.1em 0.01em 0.1em 0.5em !important;
+  width: 6em !important;
+  padding: 1em !important;
+  min-height: 100% !important;
+}
+
+.calendar-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-title {
+  font-size: 2.5em;
+  color: black;
+  text-shadow: 2px 2px 4px grey;
+  font-style: italic;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+}
+
+.calendar {
+  height: 100vh;
+}
+
+.segment-spacing {
+  margin: 1.5rem !important;
+}

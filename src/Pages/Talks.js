@@ -6,7 +6,6 @@ import {
 import '../Styles/talksStyle.css';
 import talksActions from '../Redux/talksActions';
 import calendarActions from '../Redux/calendarActions';
-
 const TalkPage = () => {
   const talks = useSelector(state => state.talks.talks, shallowEqual) || [];
   const user = useSelector(state => state.user.currentUser) || {};
@@ -19,6 +18,7 @@ const TalkPage = () => {
 
   const addEvent = ({ user_id, talk_id }) => {
     dispatch(calendarActions.addToCalendar({ user_id, talk_id }));
+    dispatch(talksActions.fetchAllTalks());
   };
 
   return (

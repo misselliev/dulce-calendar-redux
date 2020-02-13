@@ -17,8 +17,10 @@ const TalkPage = () => {
   }, [dispatch]);
 
   const addEvent = ({ user_id, talk_id }) => {
+    alert('Added to your calendar!');
     dispatch(calendarActions.addToCalendar({ user_id, talk_id }));
-    dispatch(talksActions.fetchAllTalks());
+    setTimeout(() => { 
+      dispatch(talksActions.fetchAllTalks())}, 100 )
   };
 
   return (

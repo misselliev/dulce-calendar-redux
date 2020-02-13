@@ -13,13 +13,12 @@ const CalendarPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(calendarActions.fetchCalendar(userId));
-  }, [dispatch, userId]);
+    dispatch(calendarActions.fetchCalendar());
+  }, [dispatch]);
 
   const deleteEvent = ({ userId, id }) => {
     dispatch(calendarActions.removeFromSchedule({ userId, id }));
   };
-
   return (
     <main className="ui container calendar">
       <h1 className="calendar-title">Your Calendar:</h1>

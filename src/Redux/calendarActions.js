@@ -17,15 +17,17 @@ const deleteItem = event => ({
 
 const addToCalendar = event => (dispatch) => {
   axios.post('https://salty-meadow-72553.herokuapp.com/api/v1/schedules', event).then((res) => {
-    dispatch(addEvent(res.data));
+    if (!res.data === 'error') {
+      dispatch(addEvent(res.data));
+    }
   }).catch((error) => {
     throw (error);
   });
 };
 
-const fetchCalendar = userId => (dispatch) => {
+const fetchCalendar = () => (dispatch) => {
   const headers = JSON.parse(localStorage.user);
-  axios.get(`https://salty-meadow-72553.herokuapp.com/api/v1/schedules/${userId}`, { headers }).then((res) => {
+  axios.get('https://salty-meadow-72553.herokuapp.com/api/v1/schedules/', { headers }).then((res) => {
     dispatch(loadCalendar(res.data));
   }).catch((error) => {
     throw (error);

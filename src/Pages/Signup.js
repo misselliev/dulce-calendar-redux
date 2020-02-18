@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import {
   Button, Form, Grid, Header, Segment, Icon,
 } from 'semantic-ui-react';
+import '../Styles/signupStyle.css';
 import userActions from '../Redux/userActions';
 
 const SignupPage = (props) => {
@@ -28,9 +30,9 @@ const SignupPage = (props) => {
     email, password, password_confirmation,
   } = signupForm;
   return (
-    <Grid textAlign="center" className="middle aligned" style={{ height: '100vh' }}>
-      <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" style={{ color: '#59499e' }} textAlign="center">
+    <Grid textAlign="center" className="middle aligned wall signup">
+      <Grid.Column className="signup-column">
+        <Header as="h2" className="signup-header" textAlign="center">
           <Icon name="user" />
           Create your account
         </Header>
@@ -83,6 +85,10 @@ const SignupPage = (props) => {
       </Grid.Column>
     </Grid>
   );
+};
+
+SignupPage.propTypes = {
+  history: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
 export default SignupPage;

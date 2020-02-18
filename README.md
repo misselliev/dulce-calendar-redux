@@ -36,7 +36,8 @@ To get a local copy up and running follow these simple example steps.
 
 - Download the repository.
 - Checkout to **development** branch.
-- In your terminal, run `npm install` to load all the necessary dependencies
+- In your terminal, run `npm install` to load all the necessary dependencies.
+- If running locally, please replace the heroku url in all redux actions for localhost.
 - Run `npm start` to launch the app.
 
 ## Authors

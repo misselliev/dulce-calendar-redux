@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  Container,
-  Menu,
-} from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
+import '../Styles/navStyles.css';
 import userActions from '../Redux/userActions';
 
 const Nav = () => {
@@ -14,23 +12,21 @@ const Nav = () => {
   };
   const user = useSelector(state => state.user);
 
-  const linkStyle = { color: '#59499e', fontWeight: 'bold', fontSize: '1.2em' };
-
   const display = user.currentUser ? (
 
-    <Menu stackable widths={4}>
-      <Menu.Item><Link style={linkStyle} to="/">Home</Link></Menu.Item>
-      <Menu.Item><Link style={linkStyle} to="/talks">Talks</Link></Menu.Item>
-      <Menu.Item><Link style={linkStyle} to="/calendar">Calendar</Link></Menu.Item>
-      <Menu.Item><Link style={linkStyle} to="/" onClick={handleLogout}>Logout</Link></Menu.Item>
+    <Menu widths={4}>
+      <Menu.Item><Link className="nav-link" to="/">Home</Link></Menu.Item>
+      <Menu.Item><Link className="nav-link" to="/talks">Talks</Link></Menu.Item>
+      <Menu.Item><Link className="nav-link" to="/calendar">Calendar</Link></Menu.Item>
+      <Menu.Item><Link className="nav-link" to="/" onClick={handleLogout}>Logout</Link></Menu.Item>
     </Menu>
   ) : (
     <div />
   );
   return (
-    <Container>
+    <nav className="ui container">
       {display}
-    </Container>
+    </nav>
   );
 };
 

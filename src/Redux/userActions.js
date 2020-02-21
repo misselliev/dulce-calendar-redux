@@ -15,7 +15,7 @@ const registerUser = userObj => ({
 });
 
 const loginUser = userObj => (dispatch) => {
-  axios.post('http://localhost:3000/api/v1/auth/sign_in', userObj).then((res) => {
+  axios.post('https://salty-meadow-72553.herokuapp.com/api/v1/auth/sign_in', userObj).then((res) => {
     dispatch(setUser(res.data.data));
     localStorage.setItem('user', JSON.stringify(res.headers));
   }).catch((error) => {
@@ -25,13 +25,13 @@ const loginUser = userObj => (dispatch) => {
 
 const logoutUser = () => (dispatch) => {
   const headers = JSON.parse(localStorage.user);
-  axios.delete('http://localhost:3000/api/v1/auth/sign_out', { headers });
+  axios.delete('https://salty-meadow-72553.herokuapp.com/api/v1/auth/sign_out', { headers });
   dispatch(clearUser());
   localStorage.clear();
 };
 
 const newUser = userObj => (dispatch) => {
-  axios.post('http://localhost:3000/api/v1/auth/', userObj).then((res) => {
+  axios.post('https://salty-meadow-72553.herokuapp.com/api/v1/auth/', userObj).then((res) => {
     dispatch(registerUser(res.data.data));
   }).catch((error) => {
     throw (error);

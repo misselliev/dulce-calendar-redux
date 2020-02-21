@@ -1,0 +1,36 @@
+.home-text {
+  font-size: 1.5em;
+  color: black;
+  text-shadow: 2px 2px 4px grey;
+  font-style: italic;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.home-button {
+  margin-top: 25vw !important;
+  background-color: #59499e !important;
+  padding: 1.5em !important;
+}
+
+.home-image {
+  height: 50%;
+  width: 100%;
+  max-width: 720px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-title {
+  margin-top: 1em;
+}
+
+.home-p {
+  margin-top: 10vh;
+}
+
+.home-link {
+  color: white;
+}

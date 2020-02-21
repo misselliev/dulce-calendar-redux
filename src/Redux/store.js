@@ -8,7 +8,7 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const initState = {
   user: {},
   talks: {},
-  schedule: {},
+  calendar: { calendar: [] },
 };
 const store = createStore(rootReducer, initState, composeEnhancer(applyMiddleware(thunk)));
 

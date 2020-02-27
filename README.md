@@ -19,11 +19,11 @@ Web application to help you built a conference schedule. This project was bootst
 - CSS
 - ES6
 
-## ✏️Special Credits
+## :trophy: Special Credits
 
 Design idea by [Ibrahim Shaqura on Behance](https://www.behance.net/gallery/71179603/HCIE-App-UIUX-Design)
 
-## ✨Live Demo
+## ✨ Live Demo
 
 You can look at it [here](https://intense-garden-00658.herokuapp.com/)
 
@@ -42,6 +42,9 @@ To get a local copy up and running follow these simple example steps.
 - In your terminal, run `npm install` to load all the necessary dependencies.
 - If running locally, please replace the heroku url in all redux actions for localhost.
 - Run `npm start` to launch the app.
+
+## :pencil2: Todo
+- [Testing](https://github.com/misselliev/dulce-calendar-redux/issues/6)
 
 ## Author
 

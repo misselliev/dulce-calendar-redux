@@ -21,11 +21,11 @@ Web application to help you built a conference schedule. This project was bootst
 
 ## :trophy: Special Credits
 
-Design idea by [Ibrahim Shaqura on Behance](https://www.behance.net/gallery/71179603/HCIE-App-UIUX-Design)
+Design idea by [Ibrahim Shaqura on Behance](https://www.behance.net/gallery/71179603/HCIE-App-UIUX-Design).
 
 ## ✨ Live Demo
 
-You can look at it [here](https://intense-garden-00658.herokuapp.com/)
+You can look at it [here](https://intense-garden-00658.herokuapp.com/).
 
 ## 🚀 Getting Started
 
@@ -33,7 +33,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Requirements
 
-- Latest version of **[NodeJS](https://nodejs.org/en/)** _-- (npm included)_
+- Latest version of **[NodeJS](https://nodejs.org/en/)** _-- (npm included)_.
 
 ### Setup
 

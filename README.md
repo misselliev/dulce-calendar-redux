@@ -25,7 +25,9 @@ Design idea by [Ibrahim Shaqura on Behance](https://www.behance.net/gallery/7117
 
 ## ✨ Live Demo
 
-You can look at it [here](https://intense-garden-00658.herokuapp.com/).
+You can look at it [here](https://intense-garden-00658.herokuapp.com/) and sign up or try it with the demo user:</br>
+👤  User: dulce@woof.com
+:lock: Password: 123456
 
 ## 🚀 Getting Started
 
